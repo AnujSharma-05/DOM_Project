@@ -1,33 +1,248 @@
 #include "Node.h"
-#include <iostream>
 
-Node::Node(const std::string& type) : type(type) {}
+#include <algorithm>
+#include <stdexcept>
+#include <utility>
 
-void Node::addChild(std::shared_ptr<Node> child) {
-    child->parent = shared_from_this();
-    children.push_back(child);
+namespace {
+
+int dirty_rank(DirtyState state) {
+    switch (state) {
+        case DirtyState::CLEAN:
+            return 0;
+        case DirtyState::PAINT_DIRTY:
+            return 1;
+        case DirtyState::LAYOUT_DIRTY:
+            return 2;
+    }
+    return 0;
 }
 
-void Node::setProp(const std::string& key, const std::string& value) {
-    props[key] = value;
+}  // namespace
+
+Node::Node(std::string type) : type_(std::move(type)) {
+    children_.reserve(8);
 }
 
-void Node::print(int depth) {
-    for (int i = 0; i < depth; i++) std::cout << "  ";
-
-    std::cout << type;
-
-    if (!props.empty()) {
-        std::cout << " { ";
-        for (auto& p : props) {
-            std::cout << p.first << ":" << p.second << " ";
-        }
-        std::cout << "}";
+void Node::add_child(const std::shared_ptr<Node>& child) {
+    if (!child) {
+        throw std::invalid_argument("add_child requires a non-null child");
+    }
+    if (child.get() == this) {
+        throw std::invalid_argument("add_child cannot attach a node to itself");
+    }
+    if (child->is_ancestor_of(this)) {
+        throw std::invalid_argument("add_child would create an ancestor cycle");
     }
 
-    std::cout << std::endl;
+    auto this_ref = shared_from_this();
+    if (auto current_parent = child->parent_.lock()) {
+        if (current_parent.get() == this) {
+            return;
+        }
+        current_parent->remove_direct_child(child.get());
+        current_parent->mark_dirty(DirtyState::LAYOUT_DIRTY);
+    }
 
-    for (auto& child : children) {
-        child->print(depth + 1);
+    children_.push_back(child);
+    child->parent_ = this_ref;
+    mark_dirty(DirtyState::LAYOUT_DIRTY);
+
+#ifndef NDEBUG
+    assert(debug_validate_subtree());
+#endif
+}
+
+bool Node::remove_child(const std::shared_ptr<Node>& child) {
+    if (!child) {
+        return false;
+    }
+
+    const bool removed = remove_direct_child(child.get());
+    if (!removed) {
+        return false;
+    }
+
+    child->parent_.reset();
+    mark_dirty(DirtyState::LAYOUT_DIRTY);
+
+#ifndef NDEBUG
+    assert(debug_validate_subtree());
+#endif
+
+    return true;
+}
+
+void Node::set_position(int x, int y) {
+    if (x_ == x && y_ == y) {
+        return;
+    }
+
+    x_ = x;
+    y_ = y;
+    mark_dirty(DirtyState::LAYOUT_DIRTY);
+}
+
+void Node::set_size(int width, int height) {
+    if (width_ == width && height_ == height) {
+        return;
+    }
+
+    width_ = width;
+    height_ = height;
+    mark_dirty(DirtyState::LAYOUT_DIRTY);
+}
+
+void Node::set_attribute(std::string key, std::string value) {
+    const auto it = attributes_.find(key);
+    if (it != attributes_.end() && it->second == value) {
+        return;
+    }
+
+    attributes_[std::move(key)] = std::move(value);
+    mark_dirty(DirtyState::PAINT_DIRTY);
+}
+
+std::string Node::get_attribute(std::string_view key) const {
+    auto it = attributes_.find(std::string(key));
+    if (it == attributes_.end()) {
+        return {};
+    }
+    return it->second;
+}
+
+bool Node::has_attribute(std::string_view key) const {
+    return attributes_.find(std::string(key)) != attributes_.end();
+}
+
+void Node::mark_dirty(DirtyState state) {
+    if (dirty_rank(state) > dirty_rank(state_)) {
+        state_ = state;
+    }
+
+    if (auto p = parent_.lock()) {
+        p->mark_descendant_dirty();
+    }
+}
+
+void Node::mark_clean() {
+    state_ = DirtyState::CLEAN;
+    has_dirty_descendant_ = false;
+    for (const auto& child : children_) {
+        child->mark_clean();
+    }
+}
+
+DirtyState Node::dirty_state() const {
+    return state_;
+}
+
+bool Node::has_dirty_descendant() const {
+    return has_dirty_descendant_;
+}
+
+const std::string& Node::type() const {
+    return type_;
+}
+
+std::string Node::get_id() const {
+    auto it = attributes_.find("id");
+    if (it == attributes_.end()) {
+        return {};
+    }
+    return it->second;
+}
+
+std::shared_ptr<Node> Node::parent() const {
+    return parent_.lock();
+}
+
+const std::vector<std::shared_ptr<Node>>& Node::children() const {
+    return children_;
+}
+
+int Node::x() const {
+    return x_;
+}
+
+int Node::y() const {
+    return y_;
+}
+
+int Node::width() const {
+    return width_;
+}
+
+int Node::height() const {
+    return height_;
+}
+
+#ifndef NDEBUG
+bool Node::debug_validate_subtree() const {
+    for (const auto& child : children_) {
+        if (!child) {
+            return false;
+        }
+        auto p = child->parent_.lock();
+        if (!p || p.get() != this) {
+            return false;
+        }
+    }
+
+    for (size_t i = 0; i < children_.size(); ++i) {
+        for (size_t j = i + 1; j < children_.size(); ++j) {
+            if (children_[i].get() == children_[j].get()) {
+                return false;
+            }
+        }
+    }
+
+    for (const auto& child : children_) {
+        if (child.get() == this) {
+            return false;
+        }
+        if (child->is_ancestor_of(this)) {
+            return false;
+        }
+        if (!child->debug_validate_subtree()) {
+            return false;
+        }
+    }
+
+    return true;
+}
+#endif
+
+bool Node::is_ancestor_of(const Node* maybe_descendant) const {
+    auto cursor = maybe_descendant ? maybe_descendant->parent_.lock() : nullptr;
+    while (cursor) {
+        if (cursor.get() == this) {
+            return true;
+        }
+        cursor = cursor->parent_.lock();
+    }
+    return false;
+}
+
+bool Node::remove_direct_child(const Node* child_ptr) {
+    auto it = std::find_if(children_.begin(), children_.end(), [child_ptr](const std::shared_ptr<Node>& n) {
+        return n.get() == child_ptr;
+    });
+    if (it == children_.end()) {
+        return false;
+    }
+
+    children_.erase(it);
+    return true;
+}
+
+void Node::mark_descendant_dirty() {
+    if (has_dirty_descendant_) {
+        return;
+    }
+
+    has_dirty_descendant_ = true;
+    if (auto p = parent_.lock()) {
+        p->mark_descendant_dirty();
     }
 }

@@ -1,27 +1,68 @@
-#ifdef NODE_H
-#define NODE_H
+#pragma once
 
-#include <string>
-#include <vector>
+#include <cassert>
 #include <memory>
-#include <map>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+#include <vector>
+
+enum class DirtyState {
+    CLEAN = 0,
+    PAINT_DIRTY = 1,
+    LAYOUT_DIRTY = 2,
+};
 
 class Node : public std::enable_shared_from_this<Node> {
-    std::string type;
-    std::map<std::string, std::string> props;
-    std::vector<std::shared_ptr<Node>> children;
-    std::weak_ptr<Node> parent; //weak pointer so as to prevent the cycle between child and parent. Parent owns child and child owns parent. then the reference counter is never 0 because of this cycle. so now parent to child -> strong but child -> parent is weak non-owning observer
+public:
+    explicit Node(std::string type);
 
+    void add_child(const std::shared_ptr<Node>& child);
+    bool remove_child(const std::shared_ptr<Node>& child);
 
-    Node(const std:: string& type); //constructor
+    void set_position(int x, int y);
+    void set_size(int width, int height);
 
-    void addChild(std::shared_ptr<Node> child); //we pass shred pointer to enforce the ownership clarity
-    
-    void setProp(const std:: string& key, const std:: string& value);
+    void set_attribute(std::string key, std::string value);
+    std::string get_attribute(std::string_view key) const;
+    bool has_attribute(std::string_view key) const;
 
-    void print(int depth =0);
+    void mark_dirty(DirtyState state);
+    void mark_clean();
+    DirtyState dirty_state() const;
+    bool has_dirty_descendant() const;
 
-}
+    const std::string& type() const;
+    std::string get_id() const;
 
+    std::shared_ptr<Node> parent() const;
+    const std::vector<std::shared_ptr<Node>>& children() const;
 
+    int x() const;
+    int y() const;
+    int width() const;
+    int height() const;
+
+#ifndef NDEBUG
+    bool debug_validate_subtree() const;
 #endif
+
+private:
+    bool is_ancestor_of(const Node* maybe_descendant) const;
+    bool remove_direct_child(const Node* child_ptr);
+    void mark_descendant_dirty();
+
+    std::string type_;
+    std::unordered_map<std::string, std::string> attributes_;
+
+    std::vector<std::shared_ptr<Node>> children_;
+    std::weak_ptr<Node> parent_;
+
+    int x_{0};
+    int y_{0};
+    int width_{0};
+    int height_{0};
+
+    DirtyState state_{DirtyState::CLEAN};
+    bool has_dirty_descendant_{false};
+};
