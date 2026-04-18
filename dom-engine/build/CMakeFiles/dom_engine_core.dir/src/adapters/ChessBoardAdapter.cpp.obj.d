@@ -289,13 +289,14 @@ CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj: \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\__msvc_heap_algorithms.hpp \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\deque \
   E:\Codes\DOM_Project\dom-engine\src\adapters\..\CharBuffer.h \
-  E:\Codes\DOM_Project\dom-engine\src\adapters\..\MutationObserver.h \
+  E:\Codes\DOM_Project\dom-engine\src\adapters\..\Document.h \
+  E:\Codes\DOM_Project\dom-engine\src\adapters\..\Node.h \
+  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\cassert \
+  C:\Program\ Files\ (x86)\Windows\ Kits\10\Include\10.0.26100.0\ucrt\assert.h \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\functional \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\unordered_map \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\xhash \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\list \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\xnode_handle.h \
-  E:\Codes\DOM_Project\dom-engine\src\adapters\..\Node.h \
-  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\cassert \
-  C:\Program\ Files\ (x86)\Windows\ Kits\10\Include\10.0.26100.0\ucrt\assert.h \
-  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\string_view
+  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\string_view \
+  E:\Codes\DOM_Project\dom-engine\src\adapters\..\MutationObserver.h

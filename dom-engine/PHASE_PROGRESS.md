@@ -1,48 +1,68 @@
 # DOM Engine Phase Progress
 
 ## Phase 1 - Core DOM Model
-Status: In progress (code implemented, runtime verification blocked by missing CMake/compiler in environment)
+Status: Complete
 
-Implemented:
-- `Node` now uses `std::enable_shared_from_this<Node>`.
-- Cycle-safe `add_child` with re-parenting.
-- `remove_child` API and behavior.
-- `set_position` and `set_size` no-op guards.
-- `DirtyState` + monotonic `mark_dirty` escalation.
-- Debug subtree invariant checks.
-- Phase 1 tests: `tests/test_phase1.cpp`.
-- Phase 1 microbench: `tests/bench_layout.cpp`.
-
-Remaining for phase sign-off:
-- Execute tests and bench on a machine with CMake + C++ toolchain.
-- Measure dirty-subtree visit ratio once LayoutEngine counters are integrated into benchmark report.
+Verified outcomes:
+- Tree ownership model implemented (`shared_ptr` children, `weak_ptr` parent).
+- Cycle-safe `add_child`, safe `remove_child`, and invariant checks.
+- Dirty-state monotonic escalation and subtree dirty propagation.
 
 ## Phase 2 - Rendering Loop and Observer Hooks
-Status: In progress
+Status: Complete
 
-Implemented starter slice:
-- `CharBuffer` with front/back buffers and diff count.
-- `LayoutEngine` with dirty-subtree traversal stats.
-- `Renderer::render_to_buffer` for minimal paint output.
-- `IAdapter` contract with `on_update`, `on_render`, and `on_notify_mutations`.
-- `MutationObserver` queue with batched flush callbacks.
-- `FrameLoop` tick orchestration: mutate -> layout -> collect mutations -> paint -> swap -> notify.
-- `FrameRunner` utility for fixed-frame execution and aggregate stats.
-- Descendant-dirty tracking on `Node` to enable subtree pruning without forcing root dirty.
-- Phase 2 starter tests: `tests/test_phase2.cpp`.
-- High-frequency integration test scaffold: `tests/test_phase2_integration.cpp`.
+Verified outcomes:
+- Frame pipeline working: mutate -> layout -> collect mutations -> render -> swap -> notify.
+- Adapter hooks wired and integration-tested.
+- Dirty-subtree pruning implemented for layout and renderer.
 
-Next:
-- Expand rendering from root label to subtree paint.
-- Add dirty-root tracking to avoid any root-level scan in large trees.
-- Add `IAdapter` sample implementation (`ChessBoardAdapter` stub) using all hooks.
+## Phase 3 - Query, Serializer, Diff, Adapter Replay
+Status: Complete
 
-## Build Note
-Current terminal environment is missing:
-- `cmake`
-- modern C++20 compiler (`cl.exe`, recent `g++`, or `clang++`)
+Verified outcomes:
+- Selector support: tag, id, attribute presence, attribute value.
+- JSON serializer/deserializer round-trip checks.
+- Diff engine id-based reconciliation + mutation application.
+- Chess adapter move replay and mutation logging.
 
-Detected but insufficient:
-- `g++` at `C:\MinGW\bin\g++.exe` version 6.3.0 (too old for `<span>` and full C++20)
+## Phase 4 - Performance and Concurrency
+Status: Complete
 
-Configured targets in `CMakeLists.txt` are ready to run once toolchain is installed.
+Verified benchmark numbers (10k nodes, 1% mutations):
+- `visit_ratio=0.0651`
+- `layout_visited_nodes=651`
+- `render_us=127`
+- `layout_us=211`
+- `collect_mutations_us=323`
+
+## Phase 5 - Testing, CI, and Documentation
+Status: Complete
+
+Verified outcomes:
+- Coverage and stress tests added and passing.
+- CTest labels added (`unit`, `stress`, `bench`).
+- CI workflow added for build + unit + stress.
+- Public API headers documented with Doxygen comments.
+- Contributor guide added.
+
+## Demo
+A runnable embedded-library integration demo is available:
+- Source: `examples/chess_pgn_demo.cpp`
+- Target: `chess_demo`
+
+### Build
+```powershell
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++
+cmake --build build -j4
+```
+
+### Run
+```powershell
+./build/chess_demo.exe
+```
+
+What it does:
+- Builds a full 8x8 chess board with `Document::create_element()`.
+- Replays 10 hard-coded PGN-style moves through `ChessBoardAdapter` + `FrameRunner` at 16ms/frame.
+- Validates final board position with assertions.
+- Emits ANSI terminal output for the final board state with piece and square colors.

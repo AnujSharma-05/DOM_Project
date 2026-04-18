@@ -52,6 +52,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/dom_engine_core.dir/DependInfo.cmake"
   "CMakeFiles/dom_engine_app.dir/DependInfo.cmake"
+  "CMakeFiles/chess_demo.dir/DependInfo.cmake"
   "CMakeFiles/test_phase1.dir/DependInfo.cmake"
   "CMakeFiles/bench_layout.dir/DependInfo.cmake"
   "CMakeFiles/test_phase2.dir/DependInfo.cmake"

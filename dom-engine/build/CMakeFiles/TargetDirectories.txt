@@ -1,5 +1,6 @@
 E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/dom_engine_core.dir
 E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/dom_engine_app.dir
+E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/chess_demo.dir
 E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/test_phase1.dir
 E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/bench_layout.dir
 E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/test_phase2.dir

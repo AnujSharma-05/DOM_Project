@@ -31,6 +31,9 @@ endif()
 add_executable(dom_engine_app src/main.cpp)
 target_link_libraries(dom_engine_app PRIVATE dom_engine_core)
 
+add_executable(chess_demo examples/chess_pgn_demo.cpp)
+target_link_libraries(chess_demo PRIVATE dom_engine_core)
+
 add_executable(test_phase1 tests/test_phase1.cpp)
 target_link_libraries(test_phase1 PRIVATE dom_engine_core)
 

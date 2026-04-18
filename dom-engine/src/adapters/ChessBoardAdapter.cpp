@@ -1,10 +1,12 @@
 ﻿#include "ChessBoardAdapter.h"
 
 #include "../CharBuffer.h"
+#include "../Document.h"
 #include "../MutationObserver.h"
 #include "../Node.h"
 
-ChessBoardAdapter::ChessBoardAdapter(GameState& game_state) : game_state_(game_state) {}
+ChessBoardAdapter::ChessBoardAdapter(GameState& game_state, Document* document)
+    : game_state_(game_state), document_(document) {}
 
 void ChessBoardAdapter::on_update(Node& root, std::chrono::nanoseconds frame_dt) {
     (void)frame_dt;
@@ -17,8 +19,15 @@ void ChessBoardAdapter::on_update(Node& root, std::chrono::nanoseconds frame_dt)
     const Move move = game_state_.pending_moves.front();
     game_state_.pending_moves.pop();
 
-    const auto from_square = root.querySelector("#" + move.from_square);
-    const auto to_square = root.querySelector("#" + move.to_square);
+    std::shared_ptr<Node> from_square;
+    std::shared_ptr<Node> to_square;
+    if (document_ != nullptr) {
+        from_square = document_->get_by_id(move.from_square);
+        to_square = document_->get_by_id(move.to_square);
+    } else {
+        from_square = root.querySelector("#" + move.from_square);
+        to_square = root.querySelector("#" + move.to_square);
+    }
     if (!from_square || !to_square) {
         return;
     }

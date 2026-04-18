@@ -59,6 +59,7 @@ void CharBuffer::swap_buffers() {
 std::string CharBuffer::emit_ansi() const {
     std::string output;
     int last_fg = -1;
+    int last_bg = -1;
 
     for (std::size_t y = 0; y < height_; ++y) {
         for (std::size_t x = 0; x < width_; ++x) {
@@ -82,8 +83,19 @@ std::string CharBuffer::emit_ansi() const {
                 last_fg = static_cast<int>(current.fg);
             }
 
+            if (static_cast<int>(current.bg) != last_bg) {
+                output += "\033[48;5;";
+                output += std::to_string(current.bg);
+                output += "m";
+                last_bg = static_cast<int>(current.bg);
+            }
+
             output += current.ch;
         }
+    }
+
+    if (!output.empty()) {
+        output += "\033[0m";
     }
 
     return output;

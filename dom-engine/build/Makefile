@@ -152,6 +152,19 @@ dom_engine_app/fast:
 .PHONY : dom_engine_app/fast
 
 #=============================================================================
+# Target rules for targets named chess_demo
+
+# Build rule for target.
+chess_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 chess_demo
+.PHONY : chess_demo
+
+# fast build rule for target.
+chess_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_demo.dir\build.make CMakeFiles/chess_demo.dir/build
+.PHONY : chess_demo/fast
+
+#=============================================================================
 # Target rules for targets named test_phase1
 
 # Build rule for target.
@@ -254,6 +267,30 @@ test_stress: cmake_check_build_system
 test_stress/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_stress.dir\build.make CMakeFiles/test_stress.dir/build
 .PHONY : test_stress/fast
+
+examples/chess_pgn_demo.obj: examples/chess_pgn_demo.cpp.obj
+.PHONY : examples/chess_pgn_demo.obj
+
+# target to build an object file
+examples/chess_pgn_demo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_demo.dir\build.make CMakeFiles/chess_demo.dir/examples/chess_pgn_demo.cpp.obj
+.PHONY : examples/chess_pgn_demo.cpp.obj
+
+examples/chess_pgn_demo.i: examples/chess_pgn_demo.cpp.i
+.PHONY : examples/chess_pgn_demo.i
+
+# target to preprocess a source file
+examples/chess_pgn_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_demo.dir\build.make CMakeFiles/chess_demo.dir/examples/chess_pgn_demo.cpp.i
+.PHONY : examples/chess_pgn_demo.cpp.i
+
+examples/chess_pgn_demo.s: examples/chess_pgn_demo.cpp.s
+.PHONY : examples/chess_pgn_demo.s
+
+# target to generate assembly for a file
+examples/chess_pgn_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\chess_demo.dir\build.make CMakeFiles/chess_demo.dir/examples/chess_pgn_demo.cpp.s
+.PHONY : examples/chess_pgn_demo.cpp.s
 
 src/CharBuffer.obj: src/CharBuffer.cpp.obj
 .PHONY : src/CharBuffer.obj
@@ -769,6 +806,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... test
 	@echo ... bench_layout
+	@echo ... chess_demo
 	@echo ... dom_engine_app
 	@echo ... dom_engine_core
 	@echo ... test_coverage
@@ -778,6 +816,9 @@ help:
 	@echo ... test_phase3
 	@echo ... test_phase4
 	@echo ... test_stress
+	@echo ... examples/chess_pgn_demo.obj
+	@echo ... examples/chess_pgn_demo.i
+	@echo ... examples/chess_pgn_demo.s
 	@echo ... src/CharBuffer.obj
 	@echo ... src/CharBuffer.i
 	@echo ... src/CharBuffer.s

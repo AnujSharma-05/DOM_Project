@@ -11,6 +11,7 @@
 
 class Node;
 class CharBuffer;
+class Document;
 struct MutationRecord;
 
 // Represents a single chess move
@@ -34,7 +35,7 @@ struct GameState {
  */
 class ChessBoardAdapter final : public IAdapter {
 public:
-    explicit ChessBoardAdapter(GameState& game_state);
+    explicit ChessBoardAdapter(GameState& game_state, Document* document = nullptr);
 
     void on_update(Node& root, std::chrono::nanoseconds frame_dt) override;
     void on_render(const CharBuffer& buffer) override;
@@ -45,5 +46,6 @@ public:
 private:
     int frame_count_{0};
     GameState& game_state_;
+    Document* document_{nullptr};
     std::vector<std::string> changed_squares_;
 };
