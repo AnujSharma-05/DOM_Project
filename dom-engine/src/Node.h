@@ -42,6 +42,7 @@ public:
     bool has_dirty_descendant() const;
 
     const std::string& type() const;
+    const std::unordered_map<std::string, std::string, StringHash, std::equal_to<>>& attributes() const { return attributes_; }
     std::string get_id() const;
 
     std::shared_ptr<Node> parent() const;
@@ -51,6 +52,10 @@ public:
     int y() const;
     int width() const;
     int height() const;
+
+    // Query selectors: tag name ("div"), id ("#board"), attribute ("[piece]"), attribute value ("[piece=K]")
+    std::shared_ptr<Node> querySelector(std::string_view selector) const;
+    std::vector<std::shared_ptr<Node>> querySelectorAll(std::string_view selector) const;
 
 #ifndef NDEBUG
     bool debug_validate_subtree() const;

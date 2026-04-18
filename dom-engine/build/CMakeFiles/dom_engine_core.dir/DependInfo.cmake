@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/Codes/DOM_Project/dom-engine/src/MutationObserver.cpp" "CMakeFiles/dom_engine_core.dir/src/MutationObserver.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/MutationObserver.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/Node.cpp" "CMakeFiles/dom_engine_core.dir/src/Node.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/Node.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/Renderer.cpp" "CMakeFiles/dom_engine_core.dir/src/Renderer.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/Renderer.cpp.obj.d"
+  "E:/Codes/DOM_Project/dom-engine/src/Serializer.cpp" "CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/adapters/ChessBoardAdapter.cpp" "CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj.d"
   )
 

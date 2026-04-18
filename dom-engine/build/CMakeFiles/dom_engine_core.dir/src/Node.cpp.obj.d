@@ -248,4 +248,6 @@ CMakeFiles/dom_engine_core.dir/src/Node.cpp.obj: \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\algorithm \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\__msvc_heap_algorithms.hpp \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\__msvc_minmax.hpp \
+  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\optional \
+  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\xsmf_control.h \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\stdexcept

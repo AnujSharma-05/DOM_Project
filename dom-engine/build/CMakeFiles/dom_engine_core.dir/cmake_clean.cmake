@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/dom_engine_core.dir/src/Node.cpp.obj.d"
   "CMakeFiles/dom_engine_core.dir/src/Renderer.cpp.obj"
   "CMakeFiles/dom_engine_core.dir/src/Renderer.cpp.obj.d"
+  "CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj"
+  "CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj.d"
   "CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj"
   "CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj.d"
   "dom_engine_core.lib"

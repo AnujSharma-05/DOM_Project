@@ -1,7 +1,9 @@
 #include "Node.h"
 
 #include <algorithm>
+#include <optional>
 #include <stdexcept>
+#include <string>
 #include <utility>
 
 namespace {
@@ -245,4 +247,117 @@ void Node::mark_descendant_dirty() {
     if (auto p = parent_.lock()) {
         p->mark_descendant_dirty();
     }
+}
+
+namespace {
+
+// Selector type for supported selector forms
+struct Selector {
+    enum class Type {
+        TAG_NAME,           // "div"
+        ID,                 // "#board"
+        ATTRIBUTE,          // "[piece]"
+        ATTRIBUTE_VALUE,    // "[piece=K]"
+    };
+
+    Type type;
+    std::string value;
+    std::string attr_name;
+    std::string attr_value;
+};
+
+// Parse selector string into Selector struct
+std::optional<Selector> parse_selector(std::string_view selector) {
+    if (selector.empty()) {
+        return std::nullopt;
+    }
+
+    if (selector[0] == '#') {
+        // ID selector: #id
+        return Selector{Selector::Type::ID, std::string(selector.substr(1)), "", ""};
+    } else if (selector[0] == '[') {
+        // Attribute selector: [name] or [name=value]
+        if (selector.back() != ']') {
+            return std::nullopt;
+        }
+        auto content = selector.substr(1, selector.size() - 2);
+        auto eq_pos = content.find('=');
+        if (eq_pos == std::string::npos) {
+            // [name]
+            return Selector{Selector::Type::ATTRIBUTE, std::string(content), std::string(content), ""};
+        } else {
+            // [name=value]
+            auto name = content.substr(0, eq_pos);
+            auto value = content.substr(eq_pos + 1);
+            return Selector{Selector::Type::ATTRIBUTE_VALUE, "", std::string(name), std::string(value)};
+        }
+    } else {
+        // Tag name selector
+        return Selector{Selector::Type::TAG_NAME, std::string(selector), "", ""};
+    }
+}
+
+// Check if a node matches the selector
+bool node_matches(const Node& node, const Selector& selector) {
+    switch (selector.type) {
+        case Selector::Type::TAG_NAME:
+            return node.type() == selector.value;
+        case Selector::Type::ID: {
+            const auto id = node.get_attribute("id");
+            return id == selector.value;
+        }
+        case Selector::Type::ATTRIBUTE:
+            return node.has_attribute(selector.attr_name);
+        case Selector::Type::ATTRIBUTE_VALUE: {
+            const auto value = node.get_attribute(selector.attr_name);
+            return value == selector.attr_value;
+        }
+    }
+    return false;
+}
+
+}  // namespace
+
+std::shared_ptr<Node> Node::querySelector(std::string_view selector) const {
+    auto parsed = parse_selector(selector);
+    if (!parsed) {
+        return nullptr;
+    }
+
+    // Check if root matches
+    if (node_matches(*this, *parsed)) {
+        return const_cast<Node*>(this)->shared_from_this();
+    }
+
+    // DFS through children (let recursive calls handle checking)
+    for (const auto& child : children_) {
+        auto result = child->querySelector(selector);
+        if (result) {
+            return result;
+        }
+    }
+
+    return nullptr;
+}
+
+std::vector<std::shared_ptr<Node>> Node::querySelectorAll(std::string_view selector) const {
+    std::vector<std::shared_ptr<Node>> results;
+
+    auto parsed = parse_selector(selector);
+    if (!parsed) {
+        return results;
+    }
+
+    // Check if root matches
+    if (node_matches(*this, *parsed)) {
+        results.push_back(const_cast<Node*>(this)->shared_from_this());
+    }
+
+    // DFS through children (let recursive calls handle matching)
+    for (const auto& child : children_) {
+        auto child_results = child->querySelectorAll(selector);
+        results.insert(results.end(), child_results.begin(), child_results.end());
+    }
+
+    return results;
 }

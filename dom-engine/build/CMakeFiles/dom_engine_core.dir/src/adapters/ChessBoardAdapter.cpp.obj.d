@@ -285,6 +285,9 @@ CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj: \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\string \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\vector \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\span \
+  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\queue \
+  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\__msvc_heap_algorithms.hpp \
+  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\deque \
   E:\Codes\DOM_Project\dom-engine\src\adapters\..\CharBuffer.h \
   E:\Codes\DOM_Project\dom-engine\src\adapters\..\MutationObserver.h \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\functional \
@@ -295,6 +298,4 @@ CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj: \
   E:\Codes\DOM_Project\dom-engine\src\adapters\..\Node.h \
   C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\cassert \
   C:\Program\ Files\ (x86)\Windows\ Kits\10\Include\10.0.26100.0\ucrt\assert.h \
-  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\string_view \
-  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\iostream \
-  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\ostream
+  C:\Program\ Files\ (x86)\Microsoft\ Visual\ Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\string_view

@@ -191,11 +191,26 @@ CMakeFiles/dom_engine_core.dir/src/FrameRunner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dom_engine_core.dir/src/FrameRunner.cpp.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
+CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj: CMakeFiles/dom_engine_core.dir/flags.make
+CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj: CMakeFiles/dom_engine_core.dir/includes_CXX.rsp
+CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj: E:/Codes/DOM_Project/dom-engine/src/Serializer.cpp
+CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj: CMakeFiles/dom_engine_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj"
+	C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj -MF CMakeFiles\dom_engine_core.dir\src\Serializer.cpp.obj.d -o CMakeFiles\dom_engine_core.dir\src\Serializer.cpp.obj -c E:\Codes\DOM_Project\dom-engine\src\Serializer.cpp
+
+CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+
 CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj: CMakeFiles/dom_engine_core.dir/flags.make
 CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj: CMakeFiles/dom_engine_core.dir/includes_CXX.rsp
 CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj: E:/Codes/DOM_Project/dom-engine/src/adapters/ChessBoardAdapter.cpp
 CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj: CMakeFiles/dom_engine_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj"
 	C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj -MF CMakeFiles\dom_engine_core.dir\src\adapters\ChessBoardAdapter.cpp.obj.d -o CMakeFiles\dom_engine_core.dir\src\adapters\ChessBoardAdapter.cpp.obj -c E:\Codes\DOM_Project\dom-engine\src\adapters\ChessBoardAdapter.cpp
 
 CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.i: cmake_force
@@ -216,6 +231,7 @@ dom_engine_core_OBJECTS = \
 "CMakeFiles/dom_engine_core.dir/src/MutationObserver.cpp.obj" \
 "CMakeFiles/dom_engine_core.dir/src/FrameLoop.cpp.obj" \
 "CMakeFiles/dom_engine_core.dir/src/FrameRunner.cpp.obj" \
+"CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj" \
 "CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj"
 
 # External object files for target dom_engine_core
@@ -229,10 +245,11 @@ dom_engine_core.lib: CMakeFiles/dom_engine_core.dir/src/CharBuffer.cpp.obj
 dom_engine_core.lib: CMakeFiles/dom_engine_core.dir/src/MutationObserver.cpp.obj
 dom_engine_core.lib: CMakeFiles/dom_engine_core.dir/src/FrameLoop.cpp.obj
 dom_engine_core.lib: CMakeFiles/dom_engine_core.dir/src/FrameRunner.cpp.obj
+dom_engine_core.lib: CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj
 dom_engine_core.lib: CMakeFiles/dom_engine_core.dir/src/adapters/ChessBoardAdapter.cpp.obj
 dom_engine_core.lib: CMakeFiles/dom_engine_core.dir/build.make
 dom_engine_core.lib: CMakeFiles/dom_engine_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library dom_engine_core.lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library dom_engine_core.lib"
 	$(CMAKE_COMMAND) -P CMakeFiles\dom_engine_core.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\dom_engine_core.dir\link.txt --verbose=$(VERBOSE)
 

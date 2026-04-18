@@ -14,6 +14,7 @@ add_library(dom_engine_core
     src/MutationObserver.cpp
     src/FrameLoop.cpp
     src/FrameRunner.cpp
+    src/Serializer.cpp
     src/adapters/ChessBoardAdapter.cpp
 )
 
@@ -40,7 +41,11 @@ target_link_libraries(test_phase2 PRIVATE dom_engine_core)
 add_executable(test_phase2_integration tests/test_phase2_integration.cpp)
 target_link_libraries(test_phase2_integration PRIVATE dom_engine_core)
 
+add_executable(test_phase3 tests/test_phase3.cpp)
+target_link_libraries(test_phase3 PRIVATE dom_engine_core)
+
 enable_testing()
 add_test(NAME phase1_tests COMMAND test_phase1)
 add_test(NAME phase2_tests COMMAND test_phase2)
 add_test(NAME phase2_integration_tests COMMAND test_phase2_integration)
+add_test(NAME phase3_tests COMMAND test_phase3)

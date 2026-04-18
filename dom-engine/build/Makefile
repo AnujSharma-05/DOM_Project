@@ -203,6 +203,19 @@ test_phase2_integration/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase2_integration.dir\build.make CMakeFiles/test_phase2_integration.dir/build
 .PHONY : test_phase2_integration/fast
 
+#=============================================================================
+# Target rules for targets named test_phase3
+
+# Build rule for target.
+test_phase3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_phase3
+.PHONY : test_phase3
+
+# fast build rule for target.
+test_phase3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/build
+.PHONY : test_phase3/fast
+
 src/CharBuffer.obj: src/CharBuffer.cpp.obj
 .PHONY : src/CharBuffer.obj
 
@@ -395,6 +408,30 @@ src/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
+src/Serializer.obj: src/Serializer.cpp.obj
+.PHONY : src/Serializer.obj
+
+# target to build an object file
+src/Serializer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj
+.PHONY : src/Serializer.cpp.obj
+
+src/Serializer.i: src/Serializer.cpp.i
+.PHONY : src/Serializer.i
+
+# target to preprocess a source file
+src/Serializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.i
+.PHONY : src/Serializer.cpp.i
+
+src/Serializer.s: src/Serializer.cpp.s
+.PHONY : src/Serializer.s
+
+# target to generate assembly for a file
+src/Serializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.s
+.PHONY : src/Serializer.cpp.s
+
 src/adapters/ChessBoardAdapter.obj: src/adapters/ChessBoardAdapter.cpp.obj
 .PHONY : src/adapters/ChessBoardAdapter.obj
 
@@ -539,6 +576,30 @@ tests/test_phase2_integration.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase2_integration.dir\build.make CMakeFiles/test_phase2_integration.dir/tests/test_phase2_integration.cpp.s
 .PHONY : tests/test_phase2_integration.cpp.s
 
+tests/test_phase3.obj: tests/test_phase3.cpp.obj
+.PHONY : tests/test_phase3.obj
+
+# target to build an object file
+tests/test_phase3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/tests/test_phase3.cpp.obj
+.PHONY : tests/test_phase3.cpp.obj
+
+tests/test_phase3.i: tests/test_phase3.cpp.i
+.PHONY : tests/test_phase3.i
+
+# target to preprocess a source file
+tests/test_phase3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/tests/test_phase3.cpp.i
+.PHONY : tests/test_phase3.cpp.i
+
+tests/test_phase3.s: tests/test_phase3.cpp.s
+.PHONY : tests/test_phase3.s
+
+# target to generate assembly for a file
+tests/test_phase3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/tests/test_phase3.cpp.s
+.PHONY : tests/test_phase3.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -554,6 +615,7 @@ help:
 	@echo ... test_phase1
 	@echo ... test_phase2
 	@echo ... test_phase2_integration
+	@echo ... test_phase3
 	@echo ... src/CharBuffer.obj
 	@echo ... src/CharBuffer.i
 	@echo ... src/CharBuffer.s
@@ -578,6 +640,9 @@ help:
 	@echo ... src/Renderer.obj
 	@echo ... src/Renderer.i
 	@echo ... src/Renderer.s
+	@echo ... src/Serializer.obj
+	@echo ... src/Serializer.i
+	@echo ... src/Serializer.s
 	@echo ... src/adapters/ChessBoardAdapter.obj
 	@echo ... src/adapters/ChessBoardAdapter.i
 	@echo ... src/adapters/ChessBoardAdapter.s
@@ -596,6 +661,9 @@ help:
 	@echo ... tests/test_phase2_integration.obj
 	@echo ... tests/test_phase2_integration.i
 	@echo ... tests/test_phase2_integration.s
+	@echo ... tests/test_phase3.obj
+	@echo ... tests/test_phase3.i
+	@echo ... tests/test_phase3.s
 .PHONY : help
 
 

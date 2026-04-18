@@ -18,7 +18,8 @@ int main() {
     child->set_size(8, 2);
 
     Diff diff;
-    diff.reconcile(*root);
+    auto mutations = diff.compute(root, root);
+    diff.apply(mutations, root);
 
     FrameLoop loop(40, 5);
     FrameRunner runner(loop);
@@ -28,10 +29,6 @@ int main() {
     renderer.render(*root);
 
     std::cout << "Root children: " << root->children().size() << '\n';
-    std::cout << "Frame visited nodes: " << loop.last_stats().layout.visited_nodes << '\n';
-    std::cout << "Frame changed cells: " << loop.last_stats().changed_cells << '\n';
-    std::cout << "Run total frames: " << run.frames << '\n';
-    std::cout << "Run total mutations: " << run.total_mutations << '\n';
 
     return 0;
 }

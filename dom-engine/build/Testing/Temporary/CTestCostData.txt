@@ -1,4 +1,5 @@
-phase1_tests 8 0.00924981
-phase2_tests 3 0.0253162
-phase2_integration_tests 7 0.242343
+phase1_tests 9 0.0100926
+phase2_tests 4 0.0244804
+phase2_integration_tests 8 0.232003
+phase3_tests 1 0.0232862
 ---
