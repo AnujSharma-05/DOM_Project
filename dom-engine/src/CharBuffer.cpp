@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <sstream>
 
 namespace {
 
@@ -53,6 +54,39 @@ std::size_t CharBuffer::diff_count() const {
 
 void CharBuffer::swap_buffers() {
     front_.swap(back_);
+}
+
+std::string CharBuffer::emit_ansi() const {
+    std::string output;
+    int last_fg = -1;
+
+    for (std::size_t y = 0; y < height_; ++y) {
+        for (std::size_t x = 0; x < width_; ++x) {
+            const std::size_t idx = index(x, y);
+            const Cell& previous = front_[idx];
+            const Cell& current = back_[idx];
+            if (previous == current) {
+                continue;
+            }
+
+            output += "\033[";
+            output += std::to_string(y + 1);
+            output += ";";
+            output += std::to_string(x + 1);
+            output += "H";
+
+            if (static_cast<int>(current.fg) != last_fg) {
+                output += "\033[38;5;";
+                output += std::to_string(current.fg);
+                output += "m";
+                last_fg = static_cast<int>(current.fg);
+            }
+
+            output += current.ch;
+        }
+    }
+
+    return output;
 }
 
 std::size_t CharBuffer::index(std::size_t x, std::size_t y) const {

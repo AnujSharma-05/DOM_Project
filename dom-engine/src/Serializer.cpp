@@ -44,16 +44,12 @@ std::string serialize_node(const Node& node) {
     // Serialize attributes
     oss << ",\"attributes\":{";
     bool first = true;
-
-    // List of attributes we support for now
-    const char* attrs[] = {"id", "class", "piece", "empty"};
-    for (const char* attr : attrs) {
-        std::string val = node.get_attribute(attr);
-        if (!val.empty()) {
-            if (!first) oss << ",";
-            oss << "\"" << attr << "\":\"" << json_escape(val) << "\"";
-            first = false;
+    for (const auto& [attr, val] : node.attributes()) {
+        if (!first) {
+            oss << ",";
         }
+        oss << "\"" << json_escape(attr) << "\":\"" << json_escape(val) << "\"";
+        first = false;
     }
 
     oss << "}";

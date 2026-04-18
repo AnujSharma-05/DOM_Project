@@ -3,6 +3,7 @@
 #include "IAdapter.h"
 #include "Node.h"
 
+#include <chrono>
 #include <stdexcept>
 #include <utility>
 
@@ -25,18 +26,39 @@ void FrameLoop::add_adapter(std::shared_ptr<IAdapter> adapter) {
 }
 
 void FrameLoop::tick(Node& root, std::chrono::nanoseconds dt) {
+    mutation_queue_.drain(root);
+
+    const auto update_start = std::chrono::high_resolution_clock::now();
     for (const auto& adapter : adapters_) {
         adapter->on_update(root, dt);
     }
+    const auto update_end = std::chrono::high_resolution_clock::now();
+    last_stats_.on_update_time = std::chrono::duration_cast<std::chrono::nanoseconds>(update_end - update_start);
 
+    const auto layout_start = std::chrono::high_resolution_clock::now();
     last_stats_.layout = layout_engine_.run(root);
+    const auto layout_end = std::chrono::high_resolution_clock::now();
+    last_stats_.layout_time = std::chrono::duration_cast<std::chrono::nanoseconds>(layout_end - layout_start);
 
+    const auto collect_start = std::chrono::high_resolution_clock::now();
     collect_mutations(root, observer_);
     auto records = observer_.flush();
     last_stats_.mutation_count = records.size();
+    const auto collect_end = std::chrono::high_resolution_clock::now();
+    last_stats_.collect_mutations_time = std::chrono::duration_cast<std::chrono::nanoseconds>(collect_end - collect_start);
 
+    const auto render_start = std::chrono::high_resolution_clock::now();
     renderer_.render_to_buffer(root, buffer_);
+    const auto render_end = std::chrono::high_resolution_clock::now();
+    last_stats_.render_time = std::chrono::duration_cast<std::chrono::nanoseconds>(render_end - render_start);
+
     last_stats_.changed_cells = buffer_.diff_count();
+
+    const auto emit_start = std::chrono::high_resolution_clock::now();
+    [[maybe_unused]] const auto ansi = buffer_.emit_ansi();
+    const auto emit_end = std::chrono::high_resolution_clock::now();
+    last_stats_.emit_ansi_time = std::chrono::duration_cast<std::chrono::nanoseconds>(emit_end - emit_start);
+
     buffer_.swap_buffers();
 
     for (const auto& adapter : adapters_) {
@@ -53,6 +75,10 @@ const FrameStats& FrameLoop::last_stats() const {
 
 const CharBuffer& FrameLoop::front_buffer() const {
     return buffer_;
+}
+
+MutationQueue& FrameLoop::mutation_queue() {
+    return mutation_queue_;
 }
 
 void FrameLoop::collect_mutations(const Node& node, MutationObserver& observer) {

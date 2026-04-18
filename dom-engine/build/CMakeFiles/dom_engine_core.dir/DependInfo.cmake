@@ -10,10 +10,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/Codes/DOM_Project/dom-engine/src/CharBuffer.cpp" "CMakeFiles/dom_engine_core.dir/src/CharBuffer.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/CharBuffer.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/Diff.cpp" "CMakeFiles/dom_engine_core.dir/src/Diff.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/Diff.cpp.obj.d"
+  "E:/Codes/DOM_Project/dom-engine/src/Document.cpp" "CMakeFiles/dom_engine_core.dir/src/Document.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/Document.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/FrameLoop.cpp" "CMakeFiles/dom_engine_core.dir/src/FrameLoop.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/FrameLoop.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/FrameRunner.cpp" "CMakeFiles/dom_engine_core.dir/src/FrameRunner.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/FrameRunner.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/LayoutEngine.cpp" "CMakeFiles/dom_engine_core.dir/src/LayoutEngine.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/LayoutEngine.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/MutationObserver.cpp" "CMakeFiles/dom_engine_core.dir/src/MutationObserver.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/MutationObserver.cpp.obj.d"
+  "E:/Codes/DOM_Project/dom-engine/src/MutationQueue.cpp" "CMakeFiles/dom_engine_core.dir/src/MutationQueue.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/MutationQueue.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/Node.cpp" "CMakeFiles/dom_engine_core.dir/src/Node.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/Node.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/Renderer.cpp" "CMakeFiles/dom_engine_core.dir/src/Renderer.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/Renderer.cpp.obj.d"
   "E:/Codes/DOM_Project/dom-engine/src/Serializer.cpp" "CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj" "gcc" "CMakeFiles/dom_engine_core.dir/src/Serializer.cpp.obj.d"

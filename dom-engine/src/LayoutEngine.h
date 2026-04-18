@@ -16,5 +16,5 @@ public:
     LayoutStats run(const Node& root) const;
 
 private:
-    void visit(const Node& node, bool parent_dirty, LayoutStats& stats) const;
+    void visit(const Node& node, bool parent_dirty, int parent_abs_x, int parent_abs_y, LayoutStats& stats) const;
 };

@@ -216,6 +216,19 @@ test_phase3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/build
 .PHONY : test_phase3/fast
 
+#=============================================================================
+# Target rules for targets named test_phase4
+
+# Build rule for target.
+test_phase4: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_phase4
+.PHONY : test_phase4
+
+# fast build rule for target.
+test_phase4/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/build
+.PHONY : test_phase4/fast
+
 src/CharBuffer.obj: src/CharBuffer.cpp.obj
 .PHONY : src/CharBuffer.obj
 
@@ -263,6 +276,30 @@ src/Diff.s: src/Diff.cpp.s
 src/Diff.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/Diff.cpp.s
 .PHONY : src/Diff.cpp.s
+
+src/Document.obj: src/Document.cpp.obj
+.PHONY : src/Document.obj
+
+# target to build an object file
+src/Document.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/Document.cpp.obj
+.PHONY : src/Document.cpp.obj
+
+src/Document.i: src/Document.cpp.i
+.PHONY : src/Document.i
+
+# target to preprocess a source file
+src/Document.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/Document.cpp.i
+.PHONY : src/Document.cpp.i
+
+src/Document.s: src/Document.cpp.s
+.PHONY : src/Document.s
+
+# target to generate assembly for a file
+src/Document.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/Document.cpp.s
+.PHONY : src/Document.cpp.s
 
 src/FrameLoop.obj: src/FrameLoop.cpp.obj
 .PHONY : src/FrameLoop.obj
@@ -359,6 +396,30 @@ src/MutationObserver.s: src/MutationObserver.cpp.s
 src/MutationObserver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/MutationObserver.cpp.s
 .PHONY : src/MutationObserver.cpp.s
+
+src/MutationQueue.obj: src/MutationQueue.cpp.obj
+.PHONY : src/MutationQueue.obj
+
+# target to build an object file
+src/MutationQueue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/MutationQueue.cpp.obj
+.PHONY : src/MutationQueue.cpp.obj
+
+src/MutationQueue.i: src/MutationQueue.cpp.i
+.PHONY : src/MutationQueue.i
+
+# target to preprocess a source file
+src/MutationQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/MutationQueue.cpp.i
+.PHONY : src/MutationQueue.cpp.i
+
+src/MutationQueue.s: src/MutationQueue.cpp.s
+.PHONY : src/MutationQueue.s
+
+# target to generate assembly for a file
+src/MutationQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/src/MutationQueue.cpp.s
+.PHONY : src/MutationQueue.cpp.s
 
 src/Node.obj: src/Node.cpp.obj
 .PHONY : src/Node.obj
@@ -600,6 +661,30 @@ tests/test_phase3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/tests/test_phase3.cpp.s
 .PHONY : tests/test_phase3.cpp.s
 
+tests/test_phase4.obj: tests/test_phase4.cpp.obj
+.PHONY : tests/test_phase4.obj
+
+# target to build an object file
+tests/test_phase4.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/tests/test_phase4.cpp.obj
+.PHONY : tests/test_phase4.cpp.obj
+
+tests/test_phase4.i: tests/test_phase4.cpp.i
+.PHONY : tests/test_phase4.i
+
+# target to preprocess a source file
+tests/test_phase4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/tests/test_phase4.cpp.i
+.PHONY : tests/test_phase4.cpp.i
+
+tests/test_phase4.s: tests/test_phase4.cpp.s
+.PHONY : tests/test_phase4.s
+
+# target to generate assembly for a file
+tests/test_phase4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/tests/test_phase4.cpp.s
+.PHONY : tests/test_phase4.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -616,12 +701,16 @@ help:
 	@echo ... test_phase2
 	@echo ... test_phase2_integration
 	@echo ... test_phase3
+	@echo ... test_phase4
 	@echo ... src/CharBuffer.obj
 	@echo ... src/CharBuffer.i
 	@echo ... src/CharBuffer.s
 	@echo ... src/Diff.obj
 	@echo ... src/Diff.i
 	@echo ... src/Diff.s
+	@echo ... src/Document.obj
+	@echo ... src/Document.i
+	@echo ... src/Document.s
 	@echo ... src/FrameLoop.obj
 	@echo ... src/FrameLoop.i
 	@echo ... src/FrameLoop.s
@@ -634,6 +723,9 @@ help:
 	@echo ... src/MutationObserver.obj
 	@echo ... src/MutationObserver.i
 	@echo ... src/MutationObserver.s
+	@echo ... src/MutationQueue.obj
+	@echo ... src/MutationQueue.i
+	@echo ... src/MutationQueue.s
 	@echo ... src/Node.obj
 	@echo ... src/Node.i
 	@echo ... src/Node.s
@@ -664,6 +756,9 @@ help:
 	@echo ... tests/test_phase3.obj
 	@echo ... tests/test_phase3.i
 	@echo ... tests/test_phase3.s
+	@echo ... tests/test_phase4.obj
+	@echo ... tests/test_phase4.i
+	@echo ... tests/test_phase4.s
 .PHONY : help
 
 

@@ -10,8 +10,8 @@ namespace {
 
 // Paint a single node's label to the buffer, respecting bounds and clipping
 void paint_node(const Node& node, CharBuffer& buffer) {
-    const int x = node.x();
-    const int y = node.y();
+    const int x = node.abs_x();
+    const int y = node.abs_y();
     const int width = node.width();
     const int height = node.height();
     const int buf_width = static_cast<int>(buffer.width());

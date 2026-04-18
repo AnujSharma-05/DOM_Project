@@ -54,6 +54,7 @@ static void test_query_selector_supports_supported_forms() {
 static void test_serializer_round_trip() {
     auto root = std::make_shared<Node>("board");
     root->set_attribute("id", "game");
+    root->set_attribute("color", "blue");
 
     auto row = std::make_shared<Node>("row");
     row->set_attribute("id", "rank1");
@@ -76,6 +77,7 @@ static void test_serializer_round_trip() {
     assert(restored);
     assert(restored->type() == "board");
     assert(restored->get_attribute("id") == "game");
+    assert(restored->get_attribute("color") == "blue");
     assert(restored->children().size() == 1);
 
     const auto restored_row = restored->children()[0];

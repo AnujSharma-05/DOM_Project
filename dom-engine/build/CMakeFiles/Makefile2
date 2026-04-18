@@ -69,6 +69,7 @@ all: CMakeFiles/bench_layout.dir/all
 all: CMakeFiles/test_phase2.dir/all
 all: CMakeFiles/test_phase2_integration.dir/all
 all: CMakeFiles/test_phase3.dir/all
+all: CMakeFiles/test_phase4.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -79,6 +80,7 @@ codegen: CMakeFiles/bench_layout.dir/codegen
 codegen: CMakeFiles/test_phase2.dir/codegen
 codegen: CMakeFiles/test_phase2_integration.dir/codegen
 codegen: CMakeFiles/test_phase3.dir/codegen
+codegen: CMakeFiles/test_phase4.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -93,6 +95,7 @@ clean: CMakeFiles/bench_layout.dir/clean
 clean: CMakeFiles/test_phase2.dir/clean
 clean: CMakeFiles/test_phase2_integration.dir/clean
 clean: CMakeFiles/test_phase3.dir/clean
+clean: CMakeFiles/test_phase4.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -102,12 +105,12 @@ clean: CMakeFiles/test_phase3.dir/clean
 CMakeFiles/dom_engine_core.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14,15 "Built target dom_engine_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target dom_engine_core"
 .PHONY : CMakeFiles/dom_engine_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dom_engine_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/dom_engine_core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 0
 .PHONY : CMakeFiles/dom_engine_core.dir/rule
@@ -119,7 +122,7 @@ dom_engine_core: CMakeFiles/dom_engine_core.dir/rule
 # codegen rule for target.
 CMakeFiles/dom_engine_core.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dom_engine_core.dir\build.make CMakeFiles/dom_engine_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14,15 "Finished codegen for target dom_engine_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14,15,16,17 "Finished codegen for target dom_engine_core"
 .PHONY : CMakeFiles/dom_engine_core.dir/codegen
 
 # clean rule for target.
@@ -139,7 +142,7 @@ CMakeFiles/dom_engine_app.dir/all: CMakeFiles/dom_engine_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dom_engine_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/dom_engine_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 0
 .PHONY : CMakeFiles/dom_engine_app.dir/rule
@@ -166,12 +169,12 @@ CMakeFiles/dom_engine_app.dir/clean:
 CMakeFiles/test_phase1.dir/all: CMakeFiles/dom_engine_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase1.dir\build.make CMakeFiles/test_phase1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase1.dir\build.make CMakeFiles/test_phase1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=16,17 "Built target test_phase1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=18,19 "Built target test_phase1"
 .PHONY : CMakeFiles/test_phase1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_phase1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/test_phase1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 0
 .PHONY : CMakeFiles/test_phase1.dir/rule
@@ -183,7 +186,7 @@ test_phase1: CMakeFiles/test_phase1.dir/rule
 # codegen rule for target.
 CMakeFiles/test_phase1.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase1.dir\build.make CMakeFiles/test_phase1.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=16,17 "Finished codegen for target test_phase1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=18,19 "Finished codegen for target test_phase1"
 .PHONY : CMakeFiles/test_phase1.dir/codegen
 
 # clean rule for target.
@@ -203,7 +206,7 @@ CMakeFiles/bench_layout.dir/all: CMakeFiles/dom_engine_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/bench_layout.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/bench_layout.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 0
 .PHONY : CMakeFiles/bench_layout.dir/rule
@@ -230,12 +233,12 @@ CMakeFiles/bench_layout.dir/clean:
 CMakeFiles/test_phase2.dir/all: CMakeFiles/dom_engine_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase2.dir\build.make CMakeFiles/test_phase2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase2.dir\build.make CMakeFiles/test_phase2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=18,19 "Built target test_phase2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=20,21 "Built target test_phase2"
 .PHONY : CMakeFiles/test_phase2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_phase2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/test_phase2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 0
 .PHONY : CMakeFiles/test_phase2.dir/rule
@@ -247,7 +250,7 @@ test_phase2: CMakeFiles/test_phase2.dir/rule
 # codegen rule for target.
 CMakeFiles/test_phase2.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase2.dir\build.make CMakeFiles/test_phase2.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=18,19 "Finished codegen for target test_phase2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=20,21 "Finished codegen for target test_phase2"
 .PHONY : CMakeFiles/test_phase2.dir/codegen
 
 # clean rule for target.
@@ -262,12 +265,12 @@ CMakeFiles/test_phase2.dir/clean:
 CMakeFiles/test_phase2_integration.dir/all: CMakeFiles/dom_engine_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase2_integration.dir\build.make CMakeFiles/test_phase2_integration.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase2_integration.dir\build.make CMakeFiles/test_phase2_integration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=20,21 "Built target test_phase2_integration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=22,23 "Built target test_phase2_integration"
 .PHONY : CMakeFiles/test_phase2_integration.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_phase2_integration.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/test_phase2_integration.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 0
 .PHONY : CMakeFiles/test_phase2_integration.dir/rule
@@ -279,7 +282,7 @@ test_phase2_integration: CMakeFiles/test_phase2_integration.dir/rule
 # codegen rule for target.
 CMakeFiles/test_phase2_integration.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase2_integration.dir\build.make CMakeFiles/test_phase2_integration.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=20,21 "Finished codegen for target test_phase2_integration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=22,23 "Finished codegen for target test_phase2_integration"
 .PHONY : CMakeFiles/test_phase2_integration.dir/codegen
 
 # clean rule for target.
@@ -294,12 +297,12 @@ CMakeFiles/test_phase2_integration.dir/clean:
 CMakeFiles/test_phase3.dir/all: CMakeFiles/dom_engine_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=22,23 "Built target test_phase3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=24,25 "Built target test_phase3"
 .PHONY : CMakeFiles/test_phase3.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_phase3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/test_phase3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 0
 .PHONY : CMakeFiles/test_phase3.dir/rule
@@ -311,13 +314,45 @@ test_phase3: CMakeFiles/test_phase3.dir/rule
 # codegen rule for target.
 CMakeFiles/test_phase3.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=22,23 "Finished codegen for target test_phase3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=24,25 "Finished codegen for target test_phase3"
 .PHONY : CMakeFiles/test_phase3.dir/codegen
 
 # clean rule for target.
 CMakeFiles/test_phase3.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase3.dir\build.make CMakeFiles/test_phase3.dir/clean
 .PHONY : CMakeFiles/test_phase3.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_phase4.dir
+
+# All Build rule for target.
+CMakeFiles/test_phase4.dir/all: CMakeFiles/dom_engine_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=26,27 "Built target test_phase4"
+.PHONY : CMakeFiles/test_phase4.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_phase4.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 15
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/test_phase4.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Codes\DOM_Project\dom-engine\build\CMakeFiles 0
+.PHONY : CMakeFiles/test_phase4.dir/rule
+
+# Convenience name for target.
+test_phase4: CMakeFiles/test_phase4.dir/rule
+.PHONY : test_phase4
+
+# codegen rule for target.
+CMakeFiles/test_phase4.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\Codes\DOM_Project\dom-engine\build\CMakeFiles --progress-num=26,27 "Finished codegen for target test_phase4"
+.PHONY : CMakeFiles/test_phase4.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_phase4.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/clean
+.PHONY : CMakeFiles/test_phase4.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

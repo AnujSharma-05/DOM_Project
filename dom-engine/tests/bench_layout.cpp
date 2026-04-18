@@ -1,4 +1,4 @@
-#include "LayoutEngine.h"
+#include "FrameLoop.h"
 #include "Node.h"
 
 #include <chrono>
@@ -44,18 +44,24 @@ int main() {
 
     const auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 
-    LayoutEngine engine;
-    const auto layout_stats = engine.run(*root);
+    FrameLoop loop(80, 10);
+    loop.tick(*root, std::chrono::milliseconds(16));
+    const auto& frame_stats = loop.last_stats();
 
     std::cout << "phase1_bench\n";
     std::cout << "total_nodes=" << kTotalNodes << '\n';
     std::cout << "mutated_nodes=" << kMutateCount << '\n';
     std::cout << "dirty_nodes_after_mutation=" << dirty_nodes << '\n';
     std::cout << "mutation_time_us=" << elapsed << '\n';
-    std::cout << "layout_visited_nodes=" << layout_stats.visited_nodes << '\n';
-    std::cout << "layout_dirty_roots=" << layout_stats.dirty_subtree_roots << '\n';
-    std::cout << "visit_ratio=" << (static_cast<double>(layout_stats.visited_nodes) / static_cast<double>(kTotalNodes))
+    std::cout << "layout_visited_nodes=" << frame_stats.layout.visited_nodes << '\n';
+    std::cout << "layout_dirty_roots=" << frame_stats.layout.dirty_subtree_roots << '\n';
+    std::cout << "visit_ratio=" << (static_cast<double>(frame_stats.layout.visited_nodes) / static_cast<double>(kTotalNodes))
               << '\n';
+    std::cout << "on_update_us=" << std::chrono::duration_cast<std::chrono::microseconds>(frame_stats.on_update_time).count() << '\n';
+    std::cout << "layout_us=" << std::chrono::duration_cast<std::chrono::microseconds>(frame_stats.layout_time).count() << '\n';
+    std::cout << "collect_mutations_us=" << std::chrono::duration_cast<std::chrono::microseconds>(frame_stats.collect_mutations_time).count() << '\n';
+    std::cout << "render_us=" << std::chrono::duration_cast<std::chrono::microseconds>(frame_stats.render_time).count() << '\n';
+    std::cout << "emit_ansi_us=" << std::chrono::duration_cast<std::chrono::microseconds>(frame_stats.emit_ansi_time).count() << '\n';
 
     return 0;
 }

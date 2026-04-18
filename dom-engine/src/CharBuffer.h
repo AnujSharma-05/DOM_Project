@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <string>
 #include <vector>
 
 struct Cell {
@@ -30,6 +31,7 @@ public:
 
     std::size_t diff_count() const;
     void swap_buffers();
+    std::string emit_ansi() const;
 
 private:
     std::size_t index(std::size_t x, std::size_t y) const;

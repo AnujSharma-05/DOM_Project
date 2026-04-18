@@ -1,63 +1,78 @@
-Start testing: Apr 18 23:31 India Standard Time
+Start testing: Apr 18 23:45 India Standard Time
 ----------------------------------------------------------
-1/4 Testing: phase1_tests
-1/4 Test: phase1_tests
+1/5 Testing: phase1_tests
+1/5 Test: phase1_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase1.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase1_tests" start time: Apr 18 23:31 India Standard Time
+"phase1_tests" start time: Apr 18 23:45 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.09 sec
+Test time =   0.12 sec
 ----------------------------------------------------------
 Test Passed.
-"phase1_tests" end time: Apr 18 23:31 India Standard Time
+"phase1_tests" end time: Apr 18 23:45 India Standard Time
 "phase1_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/4 Testing: phase2_tests
-2/4 Test: phase2_tests
+2/5 Testing: phase2_tests
+2/5 Test: phase2_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase2.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase2_tests" start time: Apr 18 23:31 India Standard Time
+"phase2_tests" start time: Apr 18 23:45 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.10 sec
 ----------------------------------------------------------
 Test Passed.
-"phase2_tests" end time: Apr 18 23:31 India Standard Time
+"phase2_tests" end time: Apr 18 23:45 India Standard Time
 "phase2_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/4 Testing: phase2_integration_tests
-3/4 Test: phase2_integration_tests
+3/5 Testing: phase2_integration_tests
+3/5 Test: phase2_integration_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase2_integration.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase2_integration_tests" start time: Apr 18 23:31 India Standard Time
+"phase2_integration_tests" start time: Apr 18 23:45 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   1.86 sec
+Test time =   1.82 sec
 ----------------------------------------------------------
 Test Passed.
-"phase2_integration_tests" end time: Apr 18 23:31 India Standard Time
+"phase2_integration_tests" end time: Apr 18 23:45 India Standard Time
 "phase2_integration_tests" time elapsed: 00:00:01
 ----------------------------------------------------------
 
-4/4 Testing: phase3_tests
-4/4 Test: phase3_tests
+4/5 Testing: phase3_tests
+4/5 Test: phase3_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase3.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase3_tests" start time: Apr 18 23:31 India Standard Time
+"phase3_tests" start time: Apr 18 23:45 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.02 sec
+Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"phase3_tests" end time: Apr 18 23:31 India Standard Time
+"phase3_tests" end time: Apr 18 23:45 India Standard Time
 "phase3_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Apr 18 23:31 India Standard Time
+5/5 Testing: phase4_tests
+5/5 Test: phase4_tests
+Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase4.exe"
+Directory: E:/Codes/DOM_Project/dom-engine/build
+"phase4_tests" start time: Apr 18 23:45 India Standard Time
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   2.06 sec
+----------------------------------------------------------
+Test Passed.
+"phase4_tests" end time: Apr 18 23:46 India Standard Time
+"phase4_tests" time elapsed: 00:00:02
+----------------------------------------------------------
+
+End testing: Apr 18 23:46 India Standard Time

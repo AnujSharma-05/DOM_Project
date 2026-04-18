@@ -22,7 +22,8 @@ int dirty_rank(DirtyState state) {
 
 }  // namespace
 
-Node::Node(std::string type) : type_(std::move(type)) {
+Node::Node(std::string type, IdChangeCallback id_change_callback)
+    : type_(std::move(type)), id_change_callback_(std::move(id_change_callback)) {
     children_.reserve(8);
 }
 
@@ -101,8 +102,17 @@ void Node::set_attribute(std::string key, std::string value) {
         return;
     }
 
+    const bool is_id_key = key == "id";
+    const std::string old_id = is_id_key && it != attributes_.end() ? it->second : std::string{};
+
     attributes_[std::move(key)] = std::move(value);
     mark_dirty(DirtyState::PAINT_DIRTY);
+
+    if (is_id_key && id_change_callback_) {
+        const auto new_it = attributes_.find("id");
+        const std::string new_id = new_it != attributes_.end() ? new_it->second : std::string{};
+        id_change_callback_(old_id, new_id);
+    }
 }
 
 std::string Node::get_attribute(std::string_view key) const {
@@ -179,6 +189,14 @@ int Node::height() const {
     return height_;
 }
 
+int Node::abs_x() const {
+    return abs_x_;
+}
+
+int Node::abs_y() const {
+    return abs_y_;
+}
+
 #ifndef NDEBUG
 bool Node::debug_validate_subtree() const {
     for (const auto& child : children_) {
@@ -247,6 +265,11 @@ void Node::mark_descendant_dirty() {
     if (auto p = parent_.lock()) {
         p->mark_descendant_dirty();
     }
+}
+
+void Node::apply_layout(int abs_x, int abs_y) {
+    abs_x_ = abs_x;
+    abs_y_ = abs_y;
 }
 
 namespace {
