@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake clang
+
+      - name: Configure
+        working-directory: dom-engine
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++
+
+      - name: Build
+        working-directory: dom-engine
+        run: cmake --build build -j
+
+      - name: Run unit tests
+        working-directory: dom-engine
+        run: ctest --test-dir build -L unit --output-on-failure
+
+      - name: Run stress tests
+        working-directory: dom-engine
+        run: ctest --test-dir build -L stress --output-on-failure

@@ -3,6 +3,7 @@
 #include "FrameLoop.h"
 #include "LayoutEngine.h"
 #include "Node.h"
+#include "Renderer.h"
 
 #include <algorithm>
 #include <cassert>
@@ -101,10 +102,46 @@ static void test_mutation_queue_applies_once() {
     }
 }
 
+static void test_renderer_prunes_clean_subtrees() {
+    auto root = std::make_shared<Node>("root");
+    root->set_position(0, 0);
+    root->set_size(1, 1);
+
+    std::vector<std::shared_ptr<Node>> nodes;
+    nodes.reserve(1000);
+    for (int i = 0; i < 1000; ++i) {
+        auto n = std::make_shared<Node>("n");
+        n->set_attribute("id", "x");
+        n->set_position(i, 0);
+        n->set_size(1, 1);
+        root->add_child(n);
+        nodes.push_back(n);
+    }
+
+    root->mark_clean();
+
+    // Dirty only 10 nodes.
+    for (int i = 0; i < 10; ++i) {
+        nodes[static_cast<std::size_t>(i)]->set_attribute("id", "y");
+    }
+
+    LayoutEngine engine;
+    engine.run(*root);
+
+    CharBuffer buffer(1200, 2);
+    Renderer renderer;
+    renderer.render_to_buffer(*root, buffer);
+
+    const auto changed = buffer.diff_count();
+    // One changed cell per dirty node label plus root paint at most.
+    assert(changed <= 11);
+}
+
 int main() {
     test_absolute_layout_propagation();
     test_document_id_index();
     test_emit_ansi_minimal_sequences();
     test_mutation_queue_applies_once();
+    test_renderer_prunes_clean_subtrees();
     return 0;
 }

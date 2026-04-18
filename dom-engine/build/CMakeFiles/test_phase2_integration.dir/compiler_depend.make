@@ -54,6 +54,7 @@ CMakeFiles/test_phase2_integration.dir/tests/test_phase2_integration.cpp.obj: E:
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/list \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/locale \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/memory \
+  C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/mutex \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/new \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/optional \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/ratio \
@@ -63,10 +64,12 @@ CMakeFiles/test_phase2_integration.dir/tests/test_phase2_integration.cpp.obj: E:
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/sstream \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/stdexcept \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/stdint.h \
+  C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/stop_token \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/streambuf \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/string \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/string_view \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/system_error \
+  C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/thread \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/tuple \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/type_traits \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/typeinfo \
@@ -78,6 +81,7 @@ CMakeFiles/test_phase2_integration.dir/tests/test_phase2_integration.cpp.obj: E:
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_exception.h \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_new.h \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_new_debug.h \
+  C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_startup.h \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_string.h \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_typeinfo.h \
   C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/vector \
@@ -121,6 +125,7 @@ CMakeFiles/test_phase2_integration.dir/tests/test_phase2_integration.cpp.obj: E:
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_memory.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_search.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_share.h \
+  C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_startup.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_stdio_config.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_terminate.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_wconio.h \
@@ -139,6 +144,7 @@ CMakeFiles/test_phase2_integration.dir/tests/test_phase2_integration.cpp.obj: E:
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/locale.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/malloc.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/math.h \
+  C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/process.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/share.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/stddef.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/stdio.h \
@@ -299,6 +305,7 @@ CMakeFiles/test_phase2_integration.dir/tests/test_phase2_integration.cpp.obj: E:
   E:/Codes/DOM_Project/dom-engine/src/IAdapter.h \
   E:/Codes/DOM_Project/dom-engine/src/LayoutEngine.h \
   E:/Codes/DOM_Project/dom-engine/src/MutationObserver.h \
+  E:/Codes/DOM_Project/dom-engine/src/MutationQueue.h \
   E:/Codes/DOM_Project/dom-engine/src/Node.h \
   E:/Codes/DOM_Project/dom-engine/src/Renderer.h
 
@@ -334,6 +341,10 @@ C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/sstream:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_ostream.hpp:
+
+E:/Codes/DOM_Project/dom-engine/src/Renderer.h:
+
+C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/mutex:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/__msvc_print.hpp:
 
@@ -374,6 +385,10 @@ C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC
 C:/Program\ Files/LLVM/lib/clang/22/include/serializeintrin.h:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/cfloat:
+
+C:/Program\ Files/LLVM/lib/clang/22/include/avx10_2_512satcvtintrin.h:
+
+C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/stop_token:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/xbit_ops.h:
 
@@ -443,6 +458,8 @@ C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC
 
 C:/Program\ Files/LLVM/lib/clang/22/include/__stddef_max_align_t.h:
 
+C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/vcruntime_startup.h:
+
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/exception:
 
 C:/Program\ Files/LLVM/lib/clang/22/include/sm3intrin.h:
@@ -450,8 +467,6 @@ C:/Program\ Files/LLVM/lib/clang/22/include/sm3intrin.h:
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/xlocnum:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/forward_list:
-
-C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/string:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/functional:
 
@@ -485,8 +500,6 @@ C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/optional:
 
-C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/streambuf:
-
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/setjmp.h:
 
 C:/Program\ Files/LLVM/lib/clang/22/include/keylockerintrin.h:
@@ -495,11 +508,17 @@ C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/span:
 
+C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/streambuf:
+
+C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/string:
+
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/string_view:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/xtimec.h:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/system_error:
+
+C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/thread:
 
 C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include/tuple:
 
@@ -617,6 +636,8 @@ C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_sear
 
 C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_share.h:
 
+C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_startup.h:
+
 C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_stdio_config.h:
 
 C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_terminate.h:
@@ -660,6 +681,8 @@ C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/float.h:
 C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/malloc.h:
 
 C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/math.h:
+
+C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/process.h:
 
 C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/share.h:
 
@@ -728,8 +751,6 @@ C:/Program\ Files/LLVM/lib/clang/22/include/amxtf32intrin.h:
 C:/Program\ Files/LLVM/lib/clang/22/include/avx10_2_512minmaxintrin.h:
 
 C:/Program\ Files/LLVM/lib/clang/22/include/avx10_2_512niintrin.h:
-
-C:/Program\ Files/LLVM/lib/clang/22/include/avx10_2_512satcvtintrin.h:
 
 C:/Program\ Files/LLVM/lib/clang/22/include/avx10_2bf16intrin.h:
 
@@ -899,6 +920,6 @@ E:/Codes/DOM_Project/dom-engine/src/CharBuffer.h:
 
 E:/Codes/DOM_Project/dom-engine/src/LayoutEngine.h:
 
-E:/Codes/DOM_Project/dom-engine/src/Node.h:
+E:/Codes/DOM_Project/dom-engine/src/MutationQueue.h:
 
-E:/Codes/DOM_Project/dom-engine/src/Renderer.h:
+E:/Codes/DOM_Project/dom-engine/src/Node.h:

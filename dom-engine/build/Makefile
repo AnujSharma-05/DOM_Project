@@ -229,6 +229,32 @@ test_phase4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/build
 .PHONY : test_phase4/fast
 
+#=============================================================================
+# Target rules for targets named test_coverage
+
+# Build rule for target.
+test_coverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_coverage
+.PHONY : test_coverage
+
+# fast build rule for target.
+test_coverage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_coverage.dir\build.make CMakeFiles/test_coverage.dir/build
+.PHONY : test_coverage/fast
+
+#=============================================================================
+# Target rules for targets named test_stress
+
+# Build rule for target.
+test_stress: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_stress
+.PHONY : test_stress
+
+# fast build rule for target.
+test_stress/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_stress.dir\build.make CMakeFiles/test_stress.dir/build
+.PHONY : test_stress/fast
+
 src/CharBuffer.obj: src/CharBuffer.cpp.obj
 .PHONY : src/CharBuffer.obj
 
@@ -565,6 +591,30 @@ tests/bench_layout.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\bench_layout.dir\build.make CMakeFiles/bench_layout.dir/tests/bench_layout.cpp.s
 .PHONY : tests/bench_layout.cpp.s
 
+tests/test_coverage.obj: tests/test_coverage.cpp.obj
+.PHONY : tests/test_coverage.obj
+
+# target to build an object file
+tests/test_coverage.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_coverage.dir\build.make CMakeFiles/test_coverage.dir/tests/test_coverage.cpp.obj
+.PHONY : tests/test_coverage.cpp.obj
+
+tests/test_coverage.i: tests/test_coverage.cpp.i
+.PHONY : tests/test_coverage.i
+
+# target to preprocess a source file
+tests/test_coverage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_coverage.dir\build.make CMakeFiles/test_coverage.dir/tests/test_coverage.cpp.i
+.PHONY : tests/test_coverage.cpp.i
+
+tests/test_coverage.s: tests/test_coverage.cpp.s
+.PHONY : tests/test_coverage.s
+
+# target to generate assembly for a file
+tests/test_coverage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_coverage.dir\build.make CMakeFiles/test_coverage.dir/tests/test_coverage.cpp.s
+.PHONY : tests/test_coverage.cpp.s
+
 tests/test_phase1.obj: tests/test_phase1.cpp.obj
 .PHONY : tests/test_phase1.obj
 
@@ -685,6 +735,30 @@ tests/test_phase4.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_phase4.dir\build.make CMakeFiles/test_phase4.dir/tests/test_phase4.cpp.s
 .PHONY : tests/test_phase4.cpp.s
 
+tests/test_stress.obj: tests/test_stress.cpp.obj
+.PHONY : tests/test_stress.obj
+
+# target to build an object file
+tests/test_stress.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_stress.dir\build.make CMakeFiles/test_stress.dir/tests/test_stress.cpp.obj
+.PHONY : tests/test_stress.cpp.obj
+
+tests/test_stress.i: tests/test_stress.cpp.i
+.PHONY : tests/test_stress.i
+
+# target to preprocess a source file
+tests/test_stress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_stress.dir\build.make CMakeFiles/test_stress.dir/tests/test_stress.cpp.i
+.PHONY : tests/test_stress.cpp.i
+
+tests/test_stress.s: tests/test_stress.cpp.s
+.PHONY : tests/test_stress.s
+
+# target to generate assembly for a file
+tests/test_stress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_stress.dir\build.make CMakeFiles/test_stress.dir/tests/test_stress.cpp.s
+.PHONY : tests/test_stress.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -697,11 +771,13 @@ help:
 	@echo ... bench_layout
 	@echo ... dom_engine_app
 	@echo ... dom_engine_core
+	@echo ... test_coverage
 	@echo ... test_phase1
 	@echo ... test_phase2
 	@echo ... test_phase2_integration
 	@echo ... test_phase3
 	@echo ... test_phase4
+	@echo ... test_stress
 	@echo ... src/CharBuffer.obj
 	@echo ... src/CharBuffer.i
 	@echo ... src/CharBuffer.s
@@ -744,6 +820,9 @@ help:
 	@echo ... tests/bench_layout.obj
 	@echo ... tests/bench_layout.i
 	@echo ... tests/bench_layout.s
+	@echo ... tests/test_coverage.obj
+	@echo ... tests/test_coverage.i
+	@echo ... tests/test_coverage.s
 	@echo ... tests/test_phase1.obj
 	@echo ... tests/test_phase1.i
 	@echo ... tests/test_phase1.s
@@ -759,6 +838,9 @@ help:
 	@echo ... tests/test_phase4.obj
 	@echo ... tests/test_phase4.i
 	@echo ... tests/test_phase4.s
+	@echo ... tests/test_stress.obj
+	@echo ... tests/test_stress.i
+	@echo ... tests/test_stress.s
 .PHONY : help
 
 

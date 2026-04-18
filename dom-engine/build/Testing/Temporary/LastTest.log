@@ -1,78 +1,143 @@
-Start testing: Apr 18 23:45 India Standard Time
+Start testing: Apr 18 23:58 India Standard Time
 ----------------------------------------------------------
-1/5 Testing: phase1_tests
-1/5 Test: phase1_tests
+1/8 Testing: phase1_tests
+1/8 Test: phase1_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase1.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase1_tests" start time: Apr 18 23:45 India Standard Time
+"phase1_tests" start time: Apr 18 23:58 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.12 sec
+Test time =   0.07 sec
 ----------------------------------------------------------
 Test Passed.
-"phase1_tests" end time: Apr 18 23:45 India Standard Time
+"phase1_tests" end time: Apr 18 23:58 India Standard Time
 "phase1_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/5 Testing: phase2_tests
-2/5 Test: phase2_tests
+2/8 Testing: phase2_tests
+2/8 Test: phase2_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase2.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase2_tests" start time: Apr 18 23:45 India Standard Time
+"phase2_tests" start time: Apr 18 23:58 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.10 sec
+Test time =   0.07 sec
 ----------------------------------------------------------
 Test Passed.
-"phase2_tests" end time: Apr 18 23:45 India Standard Time
+"phase2_tests" end time: Apr 18 23:58 India Standard Time
 "phase2_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/5 Testing: phase2_integration_tests
-3/5 Test: phase2_integration_tests
+3/8 Testing: phase2_integration_tests
+3/8 Test: phase2_integration_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase2_integration.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase2_integration_tests" start time: Apr 18 23:45 India Standard Time
+"phase2_integration_tests" start time: Apr 18 23:58 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   1.82 sec
+Test time =   1.43 sec
 ----------------------------------------------------------
 Test Passed.
-"phase2_integration_tests" end time: Apr 18 23:45 India Standard Time
+"phase2_integration_tests" end time: Apr 18 23:58 India Standard Time
 "phase2_integration_tests" time elapsed: 00:00:01
 ----------------------------------------------------------
 
-4/5 Testing: phase3_tests
-4/5 Test: phase3_tests
+4/8 Testing: phase3_tests
+4/8 Test: phase3_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase3.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase3_tests" start time: Apr 18 23:45 India Standard Time
+"phase3_tests" start time: Apr 18 23:58 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"phase3_tests" end time: Apr 18 23:45 India Standard Time
+"phase3_tests" end time: Apr 18 23:58 India Standard Time
 "phase3_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/5 Testing: phase4_tests
-5/5 Test: phase4_tests
+5/8 Testing: phase4_tests
+5/8 Test: phase4_tests
 Command: "E:/Codes/DOM_Project/dom-engine/build/test_phase4.exe"
 Directory: E:/Codes/DOM_Project/dom-engine/build
-"phase4_tests" start time: Apr 18 23:45 India Standard Time
+"phase4_tests" start time: Apr 18 23:58 India Standard Time
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   2.06 sec
+Test time =   2.78 sec
 ----------------------------------------------------------
 Test Passed.
-"phase4_tests" end time: Apr 18 23:46 India Standard Time
+"phase4_tests" end time: Apr 18 23:58 India Standard Time
 "phase4_tests" time elapsed: 00:00:02
 ----------------------------------------------------------
 
-End testing: Apr 18 23:46 India Standard Time
+6/8 Testing: coverage_tests
+6/8 Test: coverage_tests
+Command: "E:/Codes/DOM_Project/dom-engine/build/test_coverage.exe"
+Directory: E:/Codes/DOM_Project/dom-engine/build
+"coverage_tests" start time: Apr 18 23:58 India Standard Time
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"coverage_tests" end time: Apr 18 23:58 India Standard Time
+"coverage_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/8 Testing: stress_tests
+7/8 Test: stress_tests
+Command: "E:/Codes/DOM_Project/dom-engine/build/test_stress.exe"
+Directory: E:/Codes/DOM_Project/dom-engine/build
+"stress_tests" start time: Apr 18 23:58 India Standard Time
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.59 sec
+----------------------------------------------------------
+Test Passed.
+"stress_tests" end time: Apr 18 23:58 India Standard Time
+"stress_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/8 Testing: bench_layout_tests
+8/8 Test: bench_layout_tests
+Command: "E:/Codes/DOM_Project/dom-engine/build/bench_layout.exe"
+Directory: E:/Codes/DOM_Project/dom-engine/build
+"bench_layout_tests" start time: Apr 18 23:58 India Standard Time
+Output:
+----------------------------------------------------------
+phase1_bench
+total_nodes=10000
+mutated_nodes=100
+dirty_nodes_after_mutation=98
+mutation_time_us=65
+layout_visited_nodes=651
+layout_dirty_roots=75
+visit_ratio=0.0651
+on_update_us=3
+layout_us=186
+collect_mutations_us=316
+render_us=90
+emit_ansi_us=7
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"bench_layout_tests" end time: Apr 18 23:58 India Standard Time
+"bench_layout_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 18 23:58 India Standard Time
+
+bench =   0.16 sec*proc
+
+stress =   0.59 sec*proc
+
+unit =   4.51 sec*proc
+

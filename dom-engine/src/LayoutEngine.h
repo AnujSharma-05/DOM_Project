@@ -13,8 +13,8 @@ class LayoutEngine {
 public:
     LayoutEngine() = default;
 
-    LayoutStats run(const Node& root) const;
+    LayoutStats run(Node& root) const;
 
 private:
-    void visit(const Node& node, bool parent_dirty, int parent_abs_x, int parent_abs_y, LayoutStats& stats) const;
+    void visit(Node& node, bool parent_dirty, int parent_abs_x, int parent_abs_y, LayoutStats& stats) const;
 };

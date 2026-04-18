@@ -63,10 +63,16 @@ void Renderer::render_to_buffer(const Node& root, CharBuffer& buffer) const {
 }
 
 void Renderer::render_subtree(const Node& node, CharBuffer& buffer) const {
+    if (node.dirty_state() == DirtyState::CLEAN && !node.has_dirty_descendant()) {
+        return;
+    }
+
     paint_node(node, buffer);
 
     // Recursively paint children
     for (const auto& child : node.children()) {
-        render_subtree(*child, buffer);
+        if (child->dirty_state() != DirtyState::CLEAN || child->has_dirty_descendant()) {
+            render_subtree(*child, buffer);
+        }
     }
 }

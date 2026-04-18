@@ -1,6 +1,9 @@
-phase1_tests 10 0.0118399
-phase2_tests 5 0.0202626
-phase2_integration_tests 9 0.202291
-phase3_tests 2 0.0469921
-phase4_tests 1 2.06152
+phase1_tests 13 0.00521465
+phase2_tests 8 0.00884578
+phase2_integration_tests 12 0.119097
+phase3_tests 5 0.0189413
+phase4_tests 4 0.695512
+coverage_tests 2 0.0338787
+stress_tests 2 0.293497
+bench_layout_tests 2 0.082056
 ---
