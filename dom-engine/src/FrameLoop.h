@@ -30,7 +30,7 @@ public:
     const CharBuffer& front_buffer() const;
 
 private:
-    static void collect_mutations(const Node& node, bool parent_dirty, MutationObserver& observer);
+    static void collect_mutations(const Node& node, MutationObserver& observer);
 
     CharBuffer buffer_;
     Renderer renderer_;

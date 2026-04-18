@@ -31,7 +31,7 @@ void FrameLoop::tick(Node& root, std::chrono::nanoseconds dt) {
 
     last_stats_.layout = layout_engine_.run(root);
 
-    collect_mutations(root, false, observer_);
+    collect_mutations(root, observer_);
     auto records = observer_.flush();
     last_stats_.mutation_count = records.size();
 
@@ -55,23 +55,24 @@ const CharBuffer& FrameLoop::front_buffer() const {
     return buffer_;
 }
 
-void FrameLoop::collect_mutations(const Node& node, bool parent_dirty, MutationObserver& observer) {
+void FrameLoop::collect_mutations(const Node& node, MutationObserver& observer) {
     const bool dirty = node.dirty_state() != DirtyState::CLEAN;
     const bool needs_descend = node.has_dirty_descendant();
-    if (!dirty && !parent_dirty && !needs_descend) {
+    if (!dirty && !needs_descend) {
         return;
     }
 
     if (dirty) {
         MutationRecord record;
         record.type = mutation_type_for(node);
-        record.target = &node;
+        record.target = node.weak_from_this();
         record.detail = node.type();
         observer.enqueue(std::move(record));
     }
 
-    const bool descendant_dirty = dirty || parent_dirty;
     for (const auto& child : node.children()) {
-        collect_mutations(*child, descendant_dirty, observer);
+        if (child->dirty_state() != DirtyState::CLEAN || child->has_dirty_descendant()) {
+            collect_mutations(*child, observer);
+        }
     }
 }

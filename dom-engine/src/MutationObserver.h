@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include <memory>
 #include <span>
 #include <string>
 #include <vector>
@@ -15,7 +16,7 @@ struct MutationRecord {
     };
 
     Type type{Type::Attributes};
-    const Node* target{nullptr};
+    std::weak_ptr<const Node> target;
     std::string detail;
 };
 

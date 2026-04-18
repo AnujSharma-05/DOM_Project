@@ -1,7 +1,7 @@
 #include "CharBuffer.h"
 
 #include <algorithm>
-#include <stdexcept>
+#include <cassert>
 
 namespace {
 
@@ -56,8 +56,6 @@ void CharBuffer::swap_buffers() {
 }
 
 std::size_t CharBuffer::index(std::size_t x, std::size_t y) const {
-    if (x >= width_ || y >= height_) {
-        throw std::out_of_range("CharBuffer coordinate is out of range");
-    }
+    assert(x < width_ && y < height_ && "CharBuffer coordinate is out of range");
     return y * width_ + x;
 }

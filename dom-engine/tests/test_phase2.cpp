@@ -56,13 +56,21 @@ static void test_char_buffer_diff_and_swap() {
 
     auto root = std::make_shared<Node>("root");
     root->set_attribute("id", "board");
+    root->set_position(0, 0);
+    root->set_size(10, 3);
 
+    // First render: should show differences
     renderer.render_to_buffer(*root, buffer);
     const auto changed = buffer.diff_count();
     assert(changed > 0);
 
     buffer.swap_buffers();
-    assert(buffer.diff_count() == 0);
+    buffer.clear_back();
+
+    // Render the same content again: should show zero differences
+    renderer.render_to_buffer(*root, buffer);
+    const auto changed_again = buffer.diff_count();
+    assert(changed_again == 0);  // Same content rendered twice should produce no diffs
 }
 
 static void test_frame_loop_calls_adapter_hooks() {

@@ -104,7 +104,7 @@ void Node::set_attribute(std::string key, std::string value) {
 }
 
 std::string Node::get_attribute(std::string_view key) const {
-    auto it = attributes_.find(std::string(key));
+    auto it = attributes_.find(key);
     if (it == attributes_.end()) {
         return {};
     }
@@ -112,7 +112,7 @@ std::string Node::get_attribute(std::string_view key) const {
 }
 
 bool Node::has_attribute(std::string_view key) const {
-    return attributes_.find(std::string(key)) != attributes_.end();
+    return attributes_.find(key) != attributes_.end();
 }
 
 void Node::mark_dirty(DirtyState state) {

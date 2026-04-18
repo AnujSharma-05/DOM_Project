@@ -1,3 +1,4 @@
+#include "LayoutEngine.h"
 #include "Node.h"
 
 #include <chrono>
@@ -21,6 +22,9 @@ int main() {
         nodes[(i - 1) / 2]->add_child(n);
     }
 
+    // Clean the tree after construction so we start with a baseline
+    root->mark_clean();
+
     std::mt19937 rng(42);
     std::uniform_int_distribution<int> index_dist(1, kTotalNodes - 1);
 
@@ -40,11 +44,18 @@ int main() {
 
     const auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 
+    LayoutEngine engine;
+    const auto layout_stats = engine.run(*root);
+
     std::cout << "phase1_bench\n";
     std::cout << "total_nodes=" << kTotalNodes << '\n';
     std::cout << "mutated_nodes=" << kMutateCount << '\n';
     std::cout << "dirty_nodes_after_mutation=" << dirty_nodes << '\n';
     std::cout << "mutation_time_us=" << elapsed << '\n';
+    std::cout << "layout_visited_nodes=" << layout_stats.visited_nodes << '\n';
+    std::cout << "layout_dirty_roots=" << layout_stats.dirty_subtree_roots << '\n';
+    std::cout << "visit_ratio=" << (static_cast<double>(layout_stats.visited_nodes) / static_cast<double>(kTotalNodes))
+              << '\n';
 
     return 0;
 }

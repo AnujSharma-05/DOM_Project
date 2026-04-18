@@ -44,12 +44,16 @@ private:
 
 int main() {
     auto root = std::make_shared<Node>("root");
+    root->set_position(0, 0);
+    root->set_size(80, 10);
     std::vector<std::shared_ptr<Node>> hot_nodes;
     hot_nodes.reserve(100);
 
     for (int i = 0; i < 1000; ++i) {
         auto n = std::make_shared<Node>("n");
         n->set_attribute("id", "n-" + std::to_string(i));
+        n->set_position(static_cast<int>(i % 80), static_cast<int>(i / 80));
+        n->set_size(1, 1);
         root->add_child(n);
         if (i < 100) {
             hot_nodes.push_back(n);
@@ -72,7 +76,7 @@ int main() {
     assert(result.total_mutations > 0);
     assert(result.total_changed_cells > 0);
     assert(adapter->last_batch_size > 0);
-    assert(result.total_visited_nodes < 3000);
+    assert(result.total_visited_nodes < 1500);
     assert(root->dirty_state() == DirtyState::CLEAN);
 
     return 0;

@@ -21,6 +21,9 @@ void LayoutEngine::visit(const Node& node, bool parent_dirty, LayoutStats& stats
 
     ++stats.visited_nodes;
     for (const auto& child : node.children()) {
-        visit(*child, node_dirty || parent_dirty, stats);
+        // Only recurse if child is dirty or has dirty descendants, or parent is dirty
+        if (child->dirty_state() != DirtyState::CLEAN || child->has_dirty_descendant() || node_dirty) {
+            visit(*child, node_dirty || parent_dirty, stats);
+        }
     }
 }

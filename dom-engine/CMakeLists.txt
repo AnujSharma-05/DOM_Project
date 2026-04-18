@@ -14,6 +14,7 @@ add_library(dom_engine_core
     src/MutationObserver.cpp
     src/FrameLoop.cpp
     src/FrameRunner.cpp
+    src/adapters/ChessBoardAdapter.cpp
 )
 
 target_include_directories(dom_engine_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)

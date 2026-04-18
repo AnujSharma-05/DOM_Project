@@ -1,11 +1,20 @@
 #pragma once
 
 #include <cassert>
+#include <functional>
 #include <memory>
 #include <string>
 #include <string_view>
 #include <unordered_map>
 #include <vector>
+
+struct StringHash {
+    using is_transparent = void;
+
+    std::size_t operator()(std::string_view sv) const noexcept {
+        return std::hash<std::string_view>{}(sv);
+    }
+};
 
 enum class DirtyState {
     CLEAN = 0,
@@ -53,7 +62,7 @@ private:
     void mark_descendant_dirty();
 
     std::string type_;
-    std::unordered_map<std::string, std::string> attributes_;
+    std::unordered_map<std::string, std::string, StringHash, std::equal_to<>> attributes_;
 
     std::vector<std::shared_ptr<Node>> children_;
     std::weak_ptr<Node> parent_;
