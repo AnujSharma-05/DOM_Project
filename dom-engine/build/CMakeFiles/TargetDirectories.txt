@@ -9,6 +9,6 @@ E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/test_phase3.dir
 E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/test_phase4.dir
 E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/test_coverage.dir
 E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/test_stress.dir
-E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/test.dir
-E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/edit_cache.dir
-E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/rebuild_cache.dir
+E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/RUN_TESTS.dir
+E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/ALL_BUILD.dir
+E:/Codes/DOM_Project/dom-engine/build/CMakeFiles/ZERO_CHECK.dir
